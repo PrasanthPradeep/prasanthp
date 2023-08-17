@@ -20,7 +20,14 @@ background-repeat: no-repeat;
   height: 288px;
 }
   </style>
-  
+
+	<style>
+  .highlight {
+    background-color: yellow;
+    cursor: pointer;
+  }
+</style>
+	
   <style>
 
 .GFG{
@@ -135,23 +142,6 @@ border-radius: 10%;
 <body class="w3-white">
 	<p id="demo"></p>
 
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "store.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude);
-    xhttp.send();
-}
-</script>
 	
 	<div class="topnav" id="myTopnav">
     <a href="./index.html" class="active"><i class="fa-solid fa-house-user fa-beat"></i>  Home</a>
@@ -173,8 +163,40 @@ function showPosition(position) {
 <center>
 <img id="me" class="GFG" src="https://embed.filekitcdn.com/e/ariEq8no1pSZswcCxVjmnt/oY1tRFxmCj2u4NPC8g6zqv">
 <div style="color:#d7d7e0;font-weight:700">
-<h1>Hey &#128075;<br>It's me, Prasanth P!</h1></div><div style="color:#9b9c9d" type="Text" content="<p>I&amp;#x27;m a Computer Science Student and self-taught programmer and web developer. I share about programming, web development, and some personal views and sharing my my tech blogs with the world through Twitter, Blogger and Medium. Subscribe to my newsletter or check out the other ways to support my work below.</p>" order="0" region="subtitle"><p style="font-size:30px">I'm a Computer Science Student and self-taught programmer and web developer. I share about programming, web development, and some personal views and sharing my my tech blogs with the world through Twitter, Blogger and Medium. Subscribe to my newsletter or check out the other ways to support my work below.</p></div></div>
-<div><a href="https://twitter.com/prasanth__p_" class="button">Twitter</a>
+<h1>Hey &#128075;<br>It's me, Prasanth P!</h1></div><div style="color:#9b9c9d" type="Text" content="<p>I&amp;#x27;m a Computer Science Student and self-taught programmer and web developer. I share about programming, web development, and some personal views and sharing my my tech blogs with the world through Twitter, Blogger and Medium. Subscribe to my newsletter or check out the other ways to support my work below.</p>" order="0" region="subtitle">
+	
+<p id="text" style="font-size:30px">👋 Hello there, I'm Prasanth P, a passionate first-year B.Tech CSE student with an insatiable curiosity for all things tech and programming.</p>
+
+<p id="text" style="font-size:30px">🚀 As a budding computer science enthusiast, I find immense joy in unraveling the intricate world of coding and technology. From crafting elegant algorithms to embracing the power of data structures, I believe that programming is the art of turning imagination into reality.</p>
+
+<p id="text" style="font-size:30px">🌟 My journey began with the thrill of seeing lines of code manifest into functional software. With each project I undertake, I embrace the opportunity to learn and grow. The challenges fuel my determination, and the solutions fuel my creativity.</p>
+
+<p id="text" style="font-size:30px">🌐 Beyond the classroom, I'm a voracious explorer of the tech landscape. From AI and machine learning to web development and beyond, I'm always excited to dive into the latest trends and technologies. I believe that the only constant in our field is change, and I'm determined to keep up with the rapid evolution.</p>
+
+<p id="text" style="font-size:30px">🤝 I'm not just about the code; I'm also passionate about collaboration and community. I'm open to connecting with fellow students, developers, and tech enthusiasts. Let's share ideas, knowledge, and embark on a journey of mutual growth.</p>
+
+<p id="text" style="font-size:30px">✨ Join me as I embrace the ever-changing realm of technology, one line of code at a time. Feel free to connect, collaborate, and together, let's shape the future through innovation.
+</p>
+	<script>
+  const textElement = document.getElementById('text');
+  const words = textElement.textContent.split(' ');
+
+  textElement.innerHTML = words.map(word => `<span class="word">${word}</span>`).join(' ');
+
+  const wordElements = document.querySelectorAll('.word');
+
+  wordElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+      element.classList.add('highlight');
+    });
+
+    element.addEventListener('mouseleave', () => {
+      element.classList.remove('highlight');
+    });
+  });
+</script>
+	
+	<div><a href="https://twitter.com/prasanth__p_" class="button">Twitter</a>
 <a href="https://www.linkedin.com/in/prasanth-p-bbab1320a" class="button">LinkedIn</a>
 <a href="https://github.com/PrasanthPradeep" class="button">Github</a>
 <a href="https://www.getrevue.co/profile/prasanth__p_" class="button">Newsletter</a>
