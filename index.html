@@ -1,12 +1,103 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prasanth P</title>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #292c35;
+            display: flex;
+            justify-content: center;
+            align-items: right;
+            flex-direction: column;
+            text-align: center;
+            min-height: 100vh;
+            margin: 0;
+            transition: background 0.2s linear;
+        }
+
+        body.dark {
+            background-color: #292c35;
+        }
+
+        body.dark h1,
+        body.dark .support a {
+            color: #fff;
+        }
+
+        .checkbox {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .checkbox-label {
+            background-color: #111;
+            width: 50px;
+            height: 26px;
+            border-radius: 50px;
+            position: relative;
+            padding: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .fa-moon {
+            color: #f1c40f;
+        }
+
+        .fa-sun {
+            color: #f39c12;
+        }
+
+        .checkbox-label .ball {
+            background-color: #fff;
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            border-radius: 50%;
+            transition: transform 0.2s linear;
+        }
+
+        .checkbox:checked + .checkbox-label .ball {
+            transform: translateX(24px);
+        }
+    </style>
+<div>
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+            <span class="ball"></span>
+        </label>
+</div>
+
+    <script>
+        const checkbox = document.getElementById("checkbox");
+        const body = document.body;
+
+        checkbox.addEventListener("change", () => {
+            body.classList.toggle("dark");
+            if (body.classList.contains("dark")) {
+                body.style.backgroundColor = "#fff";
+            } else {
+                body.style.backgroundColor = "#292c35";
+            }
+        });
+    </script>
+</Head>
+  
   <style>
 #me {
   border-radius: 150px;
@@ -41,7 +132,8 @@ border-radius: 10%;
 .button {
   background-color: none;
   border-radius: 6px;
-  color: #ffffff;
+  color:white;
+  width : 150px;
   letter-spacing:1px;
   padding: 15px 32px;
   text-align: center;
@@ -62,9 +154,7 @@ border-radius: 10%;
 }
 </style>
 </head>
-
 <body>
-
 <script>
   function myFunction() {
     var x = document.getElementById("myTopnav");
@@ -135,9 +225,9 @@ border-radius: 10%;
   </style>
   
 <div class="topnav" id="myTopnav">
-    <a href="./index.html" class="active"><i class="fa-solid fa-house-user fa-beat"></i>  Home</a>
+    <a href="./index.html" class="active">Home</a>
     <a href="#news">News</a>
-    <a href="./contact.html"><i class="fa-solid fa-address-card fa-beat"></i>  Contact</a>
+    <a href="./contact.html">  Contact</a>
     <a href="#about">About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -214,7 +304,7 @@ border-radius: 10%;
 <a href="https://github.com/PrasanthPradeep" class="button">Github</a>
 <a href="https://www.instagram.com/prasanth__p_" class="button">Instagram</a>
 <a href="https://www.kooapp.com/profile/prasanth__p_" class="button">Koo App</a>
-<a href="./contact.html" class="button">Contact Me</a></div>
+<a href="./contact.html" class="button">Contact</a></div>
 </center>
 
 </body>
