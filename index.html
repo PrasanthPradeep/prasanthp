@@ -121,5 +121,68 @@
 </center>
 <a href="https://www.buymeacoffee.com/prasanth1010000" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
+<!-- Glassy Popup Notification -->
+<div id="popup" class="popup">
+  <p>🚀 Website design change coming soon!</p>
+  <button id="closePopup">Close</button>
+</div>
+
+<style>
+  /* Glassy Popup Styles */
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none; /* Initially hidden */
+  }
+
+  .popup p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+
+  .popup button {
+    background-color: #ff7300;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .popup button:hover {
+    background-color: #ff5500;
+  }
+</style>
+
+<script>
+  // JavaScript to handle popup display and close
+  window.addEventListener('load', () => {
+    const popup = document.getElementById('popup');
+    const closePopup = document.getElementById('closePopup');
+
+    // Show the popup after 3 seconds
+    setTimeout(() => {
+      popup.style.display = 'block';
+    }, 3000);
+
+    // Close the popup when the button is clicked
+    closePopup.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+  });
+</script>
+
 </body>
 </html>
