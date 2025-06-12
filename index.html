@@ -32,6 +32,13 @@
   
   
 <body>
+  <div id="comingSoonPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <p>🎨 Website design change coming soon!</p>
+    </div>
+  </div>
+  
 <script>
   function myFunction() {
     var x = document.getElementById("myTopnav");
@@ -120,6 +127,17 @@
 <p  style="color:blue;font-size:10px;">Made with&#128153from<br>Prasanth P</p>
 </center>
 <a href="https://www.buymeacoffee.com/prasanth1010000" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+<script>
+  window.onload = function () {
+    document.getElementById("comingSoonPopup").style.display = "flex";
+  };
+
+  function closePopup() {
+    document.getElementById("comingSoonPopup").style.display = "none";
+  }
+</script>
+
 
 </body>
 </html>
