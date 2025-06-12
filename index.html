@@ -1,44 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prasanth P</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
+
+  <style>
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      max-width: 90%;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🌗 Dark/Light Mode Toggle -->
 <div>
-        <input type="checkbox" class="checkbox" id="checkbox">
-        <label for="checkbox" class="checkbox-label">
-            <i class="fas fa-sun"></i>
-            <i class="fas fa-moon"></i>
-            <span class="ball"></span>
-        </label>
+  <input type="checkbox" class="checkbox" id="checkbox">
+  <label for="checkbox" class="checkbox-label">
+    <i class="fas fa-sun"></i>
+    <i class="fas fa-moon"></i>
+    <span class="ball"></span>
+  </label>
 </div>
 
-    <script>
-        const checkbox = document.getElementById("checkbox");
-        const body = document.body;
+<script>
+  const checkbox = document.getElementById("checkbox");
+  const body = document.body;
 
-        checkbox.addEventListener("change", () => {
-            body.classList.toggle("dark");
-            if (body.classList.contains("dark")) {
-                body.style.backgroundColor = "#f2f2f2";
-            } else {
-                body.style.backgroundColor = "#292c35";
-            }
-        });
-    </script>
-</Head>
-  
-  
-<body>
-  <div id="comingSoonPopup" class="popup">
-    <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <p>🎨 Website design change coming soon!</p>
-    </div>
+  checkbox.addEventListener("change", () => {
+    body.classList.toggle("dark");
+    if (body.classList.contains("dark")) {
+      body.style.backgroundColor = "#292c35";
+    } else {
+      body.style.backgroundColor = "#f2f2f2";
+    }
+  });
+</script>
+
+<!-- 🔔 Popup Glassy Alert -->
+<div id="comingSoonPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <p>🎨 Website design change coming soon!</p>
   </div>
-  
+</div>
+
+<!-- 🧭 Navigation -->
+<div class="topnav" id="myTopnav">
+  <a href="./index.html" class="active">Home</a>
+  <a href="./projects.html" target="_blank">Projects</a>
+  <a href="./contact.html" target="_blank">Contact</a>
+  <a href="./Social" target="_blank">Social</a>
+  <a href="https://prasanthpradeep.github.io/prasanthp/Prasanth%20P.pdf" target="_blank">Download CV</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
 <script>
   function myFunction() {
     var x = document.getElementById("myTopnav");
@@ -48,47 +103,54 @@
       x.className = "topnav";
     }
   }
-  </script>
-<div class="topnav" id="myTopnav">
-    <a href="./index.html" class="active">Home</a>
-    <a href="./projects.html" target="_blank">Projects</a>
-    <a href="./contact.html" target="_blank">  Contact</a>
-    <a href="./Social" target="_blank">Social</a>
-    <a href="https://prasanthpradeep.github.io/prasanthp/Prasanth%20P.pdf" target="_blank">Download CV</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-	
-<audio autoplay>
- <source src="https://prasanthpradeep.github.io/prasanthp/Images/bg-audio.a211f323.mp3" type="audio/ogg">
+</script>
+
+<!-- 🔊 Background Audio -->
+<audio autoplay loop>
   <source src="https://prasanthpradeep.github.io/prasanthp/Images/bg-audio.a211f323.mp3" type="audio/mpeg">
-    <source src="https://prasanthpradeep.github.io/prasanthp/Images/bg-audio.a211f323.mp3">
   Your browser does not support the audio element.
 </audio>
+
+<!-- 🧑‍💻 Main Content -->
 <center>
-<br><br>
-<img id="me" class="GFG" src="https://prasanthpradeep.github.io/prasanthp/Images/P_Profile.jpg">
+  <br><br>
+  <img id="me" class="GFG" src="https://prasanthpradeep.github.io/prasanthp/Images/P_Profile.jpg">
 
-<p class="text" style="color:#ae00ff;font-size:30px">
-  👋 Hello there, I'm Prasanth P, a passionate second-year B.Tech CSE student with an insatiable curiosity for all things tech and programming.
-</p>
-<p class="text" style="color:#00ff55;font-size:20px">
-  🚀 As a budding computer science enthusiast, I find immense joy in unraveling the intricate world of coding and technology. From crafting elegant algorithms to embracing the power of data structures, I believe that programming is the art of turning imagination into reality.
-</p>
-<p class="text" style="color:#ff5e00;font-size:20px">
-  🌟 My journey began with the thrill of seeing lines of code manifest into functional software. With each project I undertake, I embrace the opportunity to learn and grow. The challenges fuel my determination, and the solutions fuel my creativity.
-</p>
-<p class="text" style="color:#00b7ff;font-size:20px">
-  🌐 Beyond the classroom, I'm a voracious explorer of the tech landscape. From AI and machine learning to web development and beyond, I'm always excited to dive into the latest trends and technologies. I believe that the only constant in our field is change, and I'm determined to keep up with the rapid evolution.
-</p>
-<p class="text" style="color:#ff00ff;font-size:20px">
-  🤝 I'm not just about the code; I'm also passionate about collaboration and community. I'm open to connecting with fellow students, developers, and tech enthusiasts. Let's share ideas, knowledge, and embark on a journey of mutual growth.
-</p>
-<p class="text" style="color:rgb(255, 0, 0);font-size:25px">
-  ✨ Join me as I embrace the ever-changing realm of technology, one line of code at a time. Feel free to connect, collaborate, and together, let's shape the future through innovation.
-</p>
+  <p class="text" style="color:#ae00ff;font-size:30px">
+    👋 Hello there, I'm Prasanth P, a passionate second-year B.Tech CSE student with an insatiable curiosity for all things tech and programming.
+  </p>
+  <p class="text" style="color:#00ff55;font-size:20px">
+    🚀 As a budding computer science enthusiast, I find immense joy in unraveling the intricate world of coding and technology.
+  </p>
+  <p class="text" style="color:#ff5e00;font-size:20px">
+    🌟 My journey began with the thrill of seeing lines of code manifest into functional software.
+  </p>
+  <p class="text" style="color:#00b7ff;font-size:20px">
+    🌐 Beyond the classroom, I'm a voracious explorer of the tech landscape.
+  </p>
+  <p class="text" style="color:#ff00ff;font-size:20px">
+    🤝 I'm not just about the code; I'm also passionate about collaboration and community.
+  </p>
+  <p class="text" style="color:rgb(255, 0, 0);font-size:25px">
+    ✨ Join me as I embrace the ever-changing realm of technology, one line of code at a time.
+  </p>
 
+  <div>
+    <a style="color: #ff7300;" href="https://twitter.com/prasanth__p_" target="_blank">X</a> |
+    <a style="color: #ff7300;" href="https://www.linkedin.com/in/prasanth1010000" target="_blank">LinkedIn</a> |
+    <a style="color: #ff7300;" href="https://github.com/PrasanthPradeep" target="_blank">Github</a> |
+    <a style="color: #ff7300;" href="https://www.instagram.com/prasanth__p_" target="_blank">Instagram</a> |
+    <a style="color: #ff7300;" href="https://t.me/Prasanth_Pradeep" target="_blank">Contact</a>
+  </div>
+
+  <p style="color:blue;font-size:10px;">Made with 💙<br>Prasanth P</p>
+
+  <a href="https://www.buymeacoffee.com/prasanth1010000" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;">
+  </a>
+</center>
+
+<!-- ✨ Text Word Highlighting -->
 <script>
   const textElements = document.querySelectorAll('.text');
 
@@ -97,38 +159,15 @@
     textElement.innerHTML = words.map(word => `<span class="word">${word}</span>`).join(' ');
 
     const wordElements = textElement.querySelectorAll('.word');
-
     wordElements.forEach(element => {
-      element.addEventListener('mouseenter', () => {
-        element.classList.add('highlight');
-      });
-
-      element.addEventListener('mouseleave', () => {
-        element.classList.remove('highlight');
-      });
-
-      element.addEventListener('touchstart', () => {
-        element.classList.add('highlight');
-      });
-
-      element.addEventListener('touchend', () => {
-        element.classList.remove('highlight');
-      });
+      element.addEventListener('mouseenter', () => element.classList.add('highlight'));
+      element.addEventListener('mouseleave', () => element.classList.remove('highlight'));
+      element.addEventListener('touchstart', () => element.classList.add('highlight'));
+      element.addEventListener('touchend', () => element.classList.remove('highlight'));
     });
   });
-</script>
 
-<div>
-<a style="color: #ff7300; font-family: 'Times New Roman', Times, serif;" href="https://twitter.com/prasanth__p_" class="button" target="_blank">X</a>
-<a style="color: #ff7300; font-family: 'Times New Roman', Times, serif;" href="https://www.linkedin.com/in/prasanth1010000" class="button" target="_blank">LinkedIn</a>
-<a style="color: #ff7300; font-family: 'Times New Roman', Times, serif;" href="https://github.com/PrasanthPradeep" class="button" target="_blank">Github</a>
-<a style="color: #ff7300; font-family: 'Times New Roman', Times, serif;" href="https://www.instagram.com/prasanth__p_" class="button" target="_blank">Instagram</a>
-<a style="color: #ff7300; font-family: 'Times New Roman', Times, serif;" href="https://t.me/Prasanth_Pradeep" class="button" target="_blank">Contact</a></div>
-<p  style="color:blue;font-size:10px;">Made with&#128153from<br>Prasanth P</p>
-</center>
-<a href="https://www.buymeacoffee.com/prasanth1010000" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-<script>
+  // Show popup on load
   window.onload = function () {
     document.getElementById("comingSoonPopup").style.display = "flex";
   };
@@ -137,7 +176,6 @@
     document.getElementById("comingSoonPopup").style.display = "none";
   }
 </script>
-
 
 </body>
 </html>
